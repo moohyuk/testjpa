@@ -5,9 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.swing.*;
+import java.sql.SQLOutput;
+
 //@SpringBootTest
 @DataJpaTest
-public class CommentRepositoryTest {
+public class TestCommentRepository {
 
     @Autowired
     CommentRepository commentRepository;
