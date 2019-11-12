@@ -42,13 +42,13 @@ public class TestCategoryRepository {
         System.out.println("==========");
         System.out.println("parent id : " + category.getParentId());
         System.out.println(category.getName());
-        if(category.getParentId() != 0L) {
-            System.out.println("parent id is not 0");
+        if(category.getParentId() == 0L) {
+            return category;
+        } else {
+            System.out.println("parent id is not Top Category");
             Optional<Category> parentCategory = categoryRepository.findById(category.getParentId());
-            category = this.getParentCategory(parentCategory.get());
+            return this.getParentCategory(parentCategory.get());
         }
-
-        return category;
     }
 
 }
